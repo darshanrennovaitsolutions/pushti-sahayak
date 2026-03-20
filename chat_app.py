@@ -308,7 +308,7 @@ if prompt:
                 answer  = result["answer"]
                 sources = result["sources"]
             except Exception as e:
-                answer  = "Maafi chahta hoon, ek error aaya. Kripya dobara try karein. 🙏"
+                answer  = f"DEBUG: {str(e)}"
                 sources = []
 
         st.write(answer)
