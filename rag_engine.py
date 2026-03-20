@@ -1,8 +1,11 @@
-import os
-from pinecone import Pinecone
-from sentence_transformers import SentenceTransformer
-from anthropic import Anthropic
-from dotenv import load_dotenv
+import streamlit as st
+
+def get_secret(key):
+    try:
+        return st.secrets[key]
+    except:
+        load_dotenv()
+        return os.getenv(key)
 
 load_dotenv()
 
@@ -23,9 +26,9 @@ class PushtimargRAG:
         self.model  = SentenceTransformer(
             "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
         )
-        pc          = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
-        self.index  = pc.Index(host=os.getenv("PINECONE_HOST"))
-        self.claude = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+        pc    = Pinecone(api_key=get_secret("PINECONE_API_KEY"))
+        self.index  = pc.Index(host=get_secret("PINECONE_HOST"))
+        self.claude = Anthropic(api_key=get_secret("ANTHROPIC_API_KEY"))
         self.history = []
         print("✅ Pushti Sahayak ready! Jai Shri Krishna 🙏")
 
