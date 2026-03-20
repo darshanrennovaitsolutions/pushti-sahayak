@@ -308,7 +308,8 @@ if prompt:
                 answer  = result["answer"]
                 sources = result["sources"]
             except Exception as e:
-                answer  = f"DEBUG: {str(e)}"
+                import os
+                answer  = f"DEBUG: {str(e)} | KEY STARTS: {str(os.getenv('ANTHROPIC_API_KEY'))[:15]}"
                 sources = []
 
         st.write(answer)
