@@ -1,26 +1,16 @@
-# ════════════════════════════════════════════
-#  Pushtimarg RAG — Python dependencies
-# ════════════════════════════════════════════
-
-# Core AI & RAG
-anthropic>=0.25.0          # Claude API (main LLM)
-openai>=1.12.0             # Embeddings only (text-embedding-3-small)
-chromadb>=0.5.0            # Local vector database (free, no server)
-langchain>=0.1.0           # Text splitter
-langchain-text-splitters>=0.0.1
-
-# Document parsing
-PyMuPDF>=1.23.0            # PDF reading (fast, accurate)
-python-docx>=1.1.0         # Word .docx reading
-
-# API server
-fastapi>=0.110.0
-uvicorn[standard]>=0.27.0
-pydantic>=2.0.0
-
-# UI
-streamlit>=1.32.0
-
-# Utilities
-python-dotenv>=1.0.0       # Loads .env file
-tqdm>=4.66.0               # Progress bars
+anthropic
+openai
+chromadb
+langchain
+langchain-text-splitters
+PyMuPDF
+python-docx
+requests
+fastapi
+uvicorn
+pydantic
+streamlit
+python-dotenv
+tqdm
+pinecone
+sentence-transformers
