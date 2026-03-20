@@ -14,7 +14,8 @@ Test it:
 """
 
 import os
-from pathlib import Path
+from dotenv import load_dotenv
+from pinecone import Pinecone
 
 # pip install chromadb openai anthropic python-dotenv
 import chromadb
