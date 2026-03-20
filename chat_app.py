@@ -208,6 +208,8 @@ with st.sidebar:
 @st.cache_resource
 def load_rag():
     try:
+        from dotenv import load_dotenv
+        load_dotenv()
         from rag_engine import PushtimargRAG
         return PushtimargRAG(), None
     except Exception as e:
